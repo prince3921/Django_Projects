@@ -1,13 +1,16 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'about.css'%}">
-    <title>About</title>
-</head>
-<body>
-    <h1>Welcome to About Page</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block title %}About - Django Project{% endblock %}
+{% block content %}
+    <h1>About Us</h1>
+    <p>Welcome to our Django Project! This website is built using the Django framework.</p>
+    <p>Our mission is to provide high-quality web solutions and share knowledge about web development.</p>
+    <h2>Our Team</h2>
+    <ul>
+        <li>Alice - Lead Developer</li>
+        <li>Bob - Frontend Engineer</li>
+        <li>Charlie - Backend Engineer</li>
+        <li>Diana - UX/UI Designer</li>
+    </ul>
+    <h2>Our Story</h2>
+    <p>Founded in 2023, our team has been passionate about creating web applications that are both functional and user-friendly. We believe in the power of open-source technologies and strive to contribute to the community.</p>
+{% endblock %}

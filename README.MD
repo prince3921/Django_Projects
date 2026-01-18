@@ -21,6 +21,9 @@ python manage.py runserver
 # Create a new Django app
 python manage.py startapp app
 
+# Apply database migrations
+python manage.py migrate
+
 ### Project Structure
 ```
 myproject/
@@ -119,6 +122,84 @@ urlpatterns = [
 ]
 ```
 
+### app creation
+```bash
+# Create a new Django app
+python manage.py startapp app
+```
+### settings.py modification
+```py
+# settings.py
+# Add 'app' to the INSTALLED_APPS list
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app',
+]
 
+```
+### mainproject urls.py transfer to app urls.py 
+```py
+# myproject/urls.py
+from django.contrib import admin
+from django.urls import path, include
+from . import views   
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
+    path('app/', include('app.urls')),  # Include app URLs
+]
+```
 
+```py
+# app/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('post/', views.post, name='post'),  # New URL pattern for post view
+]
+```
+
+### layout of jinja template
+```html
+<!-- templates/website/base.html -->
+{% load static %}
+<!DOCTYPE html> html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/home.css' %}">
+    <title>{% block title %}Django Project{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>      
+
+</body>
+</html>
+```
+### extending base template
+```html
+<!-- templates/website/index.html -->
+{% extends 'website/base.html' %}
+{% block title %}Home - Django Project{% endblock %}
+{% block content %}
+    <h1>Welcome to the Django Project!</h1>     
+{% endblock %}
+```
 
