@@ -215,3 +215,68 @@ python manage.py createsuperuser
 
 prince
 prince@@7061
+
+```
+### reset superuser password
+```bash
+python manage.py changepassword <username>
+```
+
+### Tailwind CSS Integration
+
+[Setup_Tailwind CSS_Flowbite](https://flowbite.com/docs/getting-started/django/)
+
+
+### database setup in django with sqlite3
+```py
+# settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+### database setup in django with postgresql
+```py
+# settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
+
+### Pillow installation for image handling
+```bash
+python -m pip install Pillow
+```
+
+### Media files settings
+```py
+# settings.py
+import os
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+```
+
+### mainproject urls.py modification for media files
+```py
+# mainproject/urls.py
+from django.conf import settings
+from django.conf.urls.static import static 
+urlpatterns = [
+    ...
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+``` 
+
+# make migrations for media files
+```bash
+python manage.py makemigrations appname
+python manage.py migrate
+```
