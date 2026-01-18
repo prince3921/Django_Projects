@@ -280,3 +280,11 @@ urlpatterns = [
 python manage.py makemigrations appname
 python manage.py migrate
 ```
+
+
+
+### command to run tests
+```bash
+python manage.py runserver
+npm run dev
+```

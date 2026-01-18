@@ -16,3 +16,6 @@ class ChaiVariety(models.Model):
     description=models.TextField(max_length=500)
     price=models.DecimalField(max_digits=5,decimal_places=2)
     type=models.CharField(max_length=5,choices=chai_type_choices,default='ML')
+
+    def __str__(self):
+        return self.name
