@@ -1,0 +1,44 @@
+<!-- templates/_base.html -->
+
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Django Tailwind CSS Flowbite</title>
+    {% endblock %}
+
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
+
+</head>
+
+<body class=" ">
+
+    <!-- Add this -->
+
+    <nav class=" w-full h-[80px] flex bg-slate-800 mb-5">
+        <li>
+            <a href="{% url 'home' %}" class="text-white text-2xl font-bold pt-5 pl-5">Home</a>
+        </li>
+    </nav>
+     
+
+    <!-- End of new HTML -->
+
+    <div class="container mx-auto mt-4">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>
