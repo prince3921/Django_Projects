@@ -1,0 +1,8 @@
+{
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "emmet.useInlineCompletions": false,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    }
+}
