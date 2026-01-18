@@ -25,7 +25,7 @@ python manage.py startapp app
 python manage.py migrate
 
 ### Project Structure
-```
+```plaintext
 myproject/
 │├── manage.py
 │├── myproject/
