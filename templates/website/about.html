@@ -1,16 +1,15 @@
-{% extends "layout.html" %}
-{% block title %}About - Django Project{% endblock %}
+{% extends "_base.html" %}
 {% block content %}
-    <h1>About Us</h1>
-    <p>Welcome to our Django Project! This website is built using the Django framework.</p>
-    <p>Our mission is to provide high-quality web solutions and share knowledge about web development.</p>
-    <h2>Our Team</h2>
-    <ul>
-        <li>Alice - Lead Developer</li>
-        <li>Bob - Frontend Engineer</li>
-        <li>Charlie - Backend Engineer</li>
-        <li>Diana - UX/UI Designer</li>
-    </ul>
-    <h2>Our Story</h2>
-    <p>Founded in 2023, our team has been passionate about creating web applications that are both functional and user-friendly. We believe in the power of open-source technologies and strive to contribute to the community.</p>
-{% endblock %}
+{% comment %} 
+this page is about us 
+my name is prince
+i am a softwere developer
+i am learning django
+experienced and skilled in python, javascript, html, css,react,nextjs
+i love web development
+{% endcomment %}
+<h1 class="mb-6 text-3xl text-green-800">About Us</h1>
+<p class="mb-4 text-gray-700">Welcome to our website! We are dedicated to providing you with the best experience possible. Our team is passionate about delivering high-quality content and services to our users.</p>
+<p class="mb-4 text-gray-700">Our mission is to create a platform that is both informative and engaging. We believe in the power of technology to connect people and foster a sense of community.</p>
+<p class="mb-4 text-gray-700">Thank you for visiting our site. We hope you find what you're looking for and enjoy your time here. If you have any questions or feedback, please don't hesitate to reach out to us.</p>
+{% endblock content %}

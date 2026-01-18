@@ -24,10 +24,17 @@
 
     <!-- Add this -->
 
-    <nav class=" w-full h-[80px] flex bg-slate-800 mb-5">
-        <li>
-            <a href="{% url 'home' %}" class="text-white text-2xl font-bold pt-5 pl-5">Home</a>
-        </li>
+    <nav class=" w-full h-[70px] flex bg-slate-800 mb-5 shadow-lg shadow-blue-200">
+        
+        <ul class="m-auto flex space-x-4">
+            <li class="inline-block px-4 rounded-md py-2 text-white font-semibold hover:bg-slate-400 cursor-pointer"><a href="{% url 'home' %}">Home</a></li>
+            <li class="inline-block px-4 rounded-md py-2 text-white font-semibold hover:bg-slate-400 cursor-pointer"><a href="{% url 'about' %}">About</a></li>
+            <li class="inline-block px-4 rounded-md py-2 text-white font-semibold hover:bg-slate-400 cursor-pointer"><a href="{% url 'contact' %}">Contact</a></li>
+            <li class="inline-block px-4 rounded-md py-2 text-white font-semibold hover:bg-slate-400 cursor-pointer"><a href="{% url 'app-home' %}">App</a></li>
+            <li class="inline-block px-4 rounded-md py-2 text-white font-semibold hover:bg-slate-400 cursor-pointer"><a href="{% url 'login' %}">Login</a></li>
+            <li class="inline-block px-4 rounded-md py-2 text-white font-semibold hover:bg-slate-400 cursor-pointer"><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+       
     </nav>
      
 

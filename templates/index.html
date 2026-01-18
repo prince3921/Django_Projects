@@ -2,24 +2,6 @@
 
 {% extends "_base.html" %}
 
-<nav class=" w-full h-[80px] flex bg-slate-800 mb-5">
-    <li>
-        <a href="{% url 'home' %}" class="text-white text-2xl font-bold pt-5 pl-5">Home</a>
-    </li>
-    <li>
-        <a href="{% url 'about' %}" class="text-white text-2xl font-bold pt-5 pl-5">About</a>
-    </li>
-    <li>
-        <a href="{% url 'contact' %}" class="text-white text-2xl font-bold pt-5 pl-5">Contact</a>
-    </li>
-    <li>
-        <a href="{% url 'services' %}" class="text-white text-2xl font-bold pt-5 pl-5">Services</a>
-    </li>
-    <li>
-        <a href="{% url 'portfolio' %}" class="text-white text-2xl font-bold pt-5 pl-5">Portfolio</a>
-    </li>
-</nav>
-
 {% block content %}
 
 <h1 class="mb-6 text-3xl text-green-800">Django + Tailwind CSS + Flowbite</h1>

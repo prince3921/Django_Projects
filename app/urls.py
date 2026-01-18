@@ -19,7 +19,9 @@ from . import views
 
 # Define the URL patterns for the app
 # localhost:8000/app/post
+# localhost:8000/app/user/id
 urlpatterns = [
-    path('', views.all_posts, name='apphome'),
-    path('order/', views.order_posts, name='order'),
+    path('', views.app_home, name='app-home'),
+    path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
 ]

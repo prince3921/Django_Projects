@@ -203,3 +203,15 @@ urlpatterns = [
 {% endblock %}
 ```
 
+### Apply database migrations
+apply : admin, auth, contenttypes, sessions
+```bash 
+python manage.py migrate
+```
+
+### create admin userpassword(superuser)
+```bash
+python manage.py createsuperuser
+
+prince
+prince@@7061

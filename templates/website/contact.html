@@ -1,13 +1,37 @@
-{% extends "layout.html" %}
-{% block title %}Contact - Django Project{% endblock %}
+{% extends "_base.html" %}
 {% block content %}
-    <h1>Contact Us</h1>
-    <p>If you have any questions, feel free to reach out!</p>
-    <ul>
-        <li>Email:
-            <a href="mailto:contact@example.com">contact@example.com</a>
-        </li>
-        <li>Phone: +1 (123) 456-7890</li>
-        <li>Address: 123 Django St, Web City, Internet</li>
-    </ul>
-{% endblock %}
+<h1 class="mb-6 text-3xl text-green-800">Contact Us</h1>
+<form class="max-w-lg bg-white p-8 rounded-lg shadow-md" action="#" method="POST">
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+            Name
+        </label>
+        <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name" type="text" placeholder="Your Name" required>
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Email
+        </label>
+        <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email" type="email" placeholder="Your Email" required>  
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+            Message
+        </label>
+        <textarea
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <div class="flex items-center justify-between">
+        <button
+            class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Send Message
+        </button>
+    </div>
+</form>
+{% endblock content %}
