@@ -23,5 +23,5 @@ from . import views
 urlpatterns = [
     path('', views.app_home, name='app-home'),
     path('login/', views.login, name='login'),
-    path('register/', views.register, name='register'),
+    path('chai/<int:chai_id>/', views.chai_details, name='chai-details'),
 ]

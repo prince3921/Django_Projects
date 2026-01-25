@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% block content %}
+{% comment %} This page is show all posts card {% endcomment %}
+{% comment %} grid ke use karke  {% endcomment %}
+<h1 class=" w-full py-2.5 bg-slate-700 text-center mb-6 rounded-md text-white text-4xl font-bold ">All Chai</h1>
+<div class="w-full min-h-screen dark:text-white flex flex-wrap gap-6"> 
+{% comment %} This page show all chai {% endcomment %}
+    {% for chai in chais %}
+    <div class=" w-1/4 h-72 py-6 px-4 card-item rounded-md shadow-lg border border-gray-300">
+        <img class="w-full h-48 object-cover rounded-md" src="{{ chai.image.url }}" class="card-img-top" alt="{{ chai.name }}">
+        <div class="card-body">
+            <h5 class="card-title font-bold">{{ chai.name }}</h5>
+           <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><a href="{% url 'chai-details' chai.id %}">{{chai.type}}:{{chai.size}}</a></button>
+        </div>
+    </div>
+{% endfor %}
+
+</div>
+{% endblock %}  
+
